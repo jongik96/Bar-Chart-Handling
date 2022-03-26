@@ -12,14 +12,25 @@ const routes = [
     component: () => import("@/views/Info.vue"),
   },
   {
-    path: "/month",
+    path: "/barMonth",
     name: "ByMonth",
     component: () => import("@/views/ByMonth.vue"),
   },
   {
-    path: "/day",
-    name: "ByDay",
+    path: "/barDay",
+    name: "BarByDay",
     component: () => import("@/views/ByDay.vue"),
+    props: true,
+  },
+  {
+    path: "/lineMonth",
+    name: "LineMonth",
+    component: () => import("@/views/LineMonth.vue"),
+  },
+  {
+    path: "/lineDay",
+    name: "LineByDay",
+    component: () => import("@/views/LineDay.vue"),
     props: true,
   },
 ];

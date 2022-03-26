@@ -20,7 +20,7 @@ onMounted(() => {
   let ctx = document.getElementById("myChart");
   console.log(myChart);
   let myChart = new Chart(ctx, {
-    type: "bar",
+    type: "line",
     data: {
       labels: month,
       datasets: [
@@ -51,7 +51,7 @@ onMounted(() => {
 });
 const goMonth = (data) => {
   // console.log(data);
-  router.push({ name: "BarByDay", params: { month: data } });
+  router.push({ name: "LineByDay", params: { month: data } });
 };
 </script>
 

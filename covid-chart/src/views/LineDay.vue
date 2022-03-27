@@ -39,6 +39,7 @@ onMounted(() => {
       labels: getDate(testDay),
       datasets: [
         {
+          lineTension: 0,
           label: "일 별 검사 수",
           data: testCount,
           backgroundColor: "rgba(255, 0, 0, 0.8)",

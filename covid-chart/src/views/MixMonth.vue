@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>월별 검사건수</h3>
+    <h3>Bar + Line</h3>
     <canvas id="myChart" style="width: 400; height: 300px"></canvas>
   </div>
 </template>
@@ -25,19 +25,14 @@ onMounted(() => {
       labels: month,
       datasets: [
         {
-          lineTension: 0,
           label: "월 별 검사 건 수",
           data: monthSum,
           backgroundColor: "rgba(255, 0, 0, 0.8)",
-          borderColor: "rgba(255,0,0,0.8)",
-          fill: false,
+          type: "bar",
         },
       ],
     },
     options: {
-      animation: {
-        duration: 1500,
-      },
       scales: {
         yAxes: [
           {
@@ -48,17 +43,17 @@ onMounted(() => {
         ],
       },
       // events: ["click"],
-      onClick: function (e) {
-        console.log(e.target.__object__);
+      onClick: function (evt, item) {
+        var label = item[0]["_model"].label;
+        goMonth(label);
       },
     },
   });
 });
 const goMonth = (data) => {
   // console.log(data);
-  router.push({ name: "LineByDay", params: { month: data } });
+  router.push({ name: "BarByDay", params: { month: data } });
 };
-console.log(goMonth);
 </script>
 
 <style></style>

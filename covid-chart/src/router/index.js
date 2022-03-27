@@ -33,6 +33,11 @@ const routes = [
     component: () => import("@/views/LineDay.vue"),
     props: true,
   },
+  {
+    path: "/mixMonth",
+    name: "MixMonth",
+    component: () => import("@/views/MixMonth.vue"),
+  },
 ];
 
 const router = createRouter({
